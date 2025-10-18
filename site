@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concurs de Machiaj Halloween 💄👻</title>
+  <style>
+    /* ====== RESET + FONT ====== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #2b002e, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
+                  url('https://i.imgur.com/uwWvPhg.png') center/cover no-repeat;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff69b4;
+      text-shadow: 0 0 20px #ff1493;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px #ff66cc; }
+      50% { text-shadow: 0 0 30px #ff1493; }
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .button {
+      margin-top: 40px;
+      background: #ff1493;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #ff1493;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #ff66b2;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff66b2;
+    }
+
+    /* ====== FUM ANIMAT ====== */
+    .smoke {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 10s infinite ease-in-out alternate;
+    }
+    .smoke:nth-child(1) {
+      top: 10%;
+      left: 20%;
+      background: rgba(255,105,180,0.1);
+      animation-delay: 0s;
+    }
+    .smoke:nth-child(2) {
+      bottom: 15%;
+      right: 25%;
+      background: rgba(186,85,211,0.1);
+      animation-delay: 2s;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-40px) scale(1.2); }
+    }
+
+    /* ====== SECȚIUNI ====== */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ff99ff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #ff66cc;
+    }
+
+    .premii {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .premiu {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 20px;
+      width: 260px;
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s;
+    }
+    .premiu:hover {
+      transform: translateY(-8px);
+    }
+
+    footer {
+      background: #111;
+      padding: 30px;
+      color: #bbb;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    /* ====== ANIMAȚIE SCROLL ====== */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(max-width: 768px) {
+      h1 { font-size: 2.3rem; }
+      p { font-size: 1rem; }
+      .premiu { width: 85%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECȚIUNEA 1: INTRO -->
+  <header>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <h1>Concurs de Machiaj Halloween 2025 💄👻</h1>
+    <p>Transformă-ți pasiunea în artă și câștigă premii fabuloase!  
+      Arată-ne talentul tău printr-un machiaj inspirat de tema  
+      <b>„Frumusețea întunericului”</b>.</p>
+    <a href="#inscriere" class="button">🔥 Înscrie-te acum</a>
+  </header>
+
+  <!-- SECȚIUNEA 2: PREMII -->
+  <section id="premii" class="fade">
+    <h2>🏆 Premii & Regulament</h2>
+    <div class="premii">
+      <div class="premiu">
+        <h3>🥇 Locul 1</h3>
+        <p>300 lei + promovare pe pagină</p>
+      </div>
+      <div class="premiu">
+        <h3>🥈 Locul 2</h3>
+        <p>150 lei</p>
+      </div>
+      <div class="premiu">
+        <h3>🥉 Locul 3</h3>
+        <p>50 lei + mențiune specială</p>
+      </div>
+    </div>
+    <p style="margin-top:30px;">
+      <b>Regulament (pe scurt):</b><br>
+      • Machiajul trebuie realizat personal 🎃<br>
+      • Poza/video se trimite până la <b>30 octombrie 2025</b><br>
+      • Jurizarea: creativitate, execuție, temă<br>
+      • Câștigătorii sunt anunțați pe <b>31 octombrie, ora 20:00</b>
+    </p>
+  </section>
+
+  <!-- SECȚIUNEA 3: ÎNSCRIERE -->
+  <section id="inscriere" class="fade">
+    <h2>🕸 Înscriere</h2>
+    <p>
+      💰 <b>Taxa de înscriere: 10 lei</b><br><br>
+      Această taxă simbolică ne ajută să păstrăm concursul  
+      <b>selectiv și serios</b>, evitând înscrierile de formă și  
+      oferind șanse reale celor pasionați cu adevărat.  
+      Toate fondurile merg către <b>organizarea concursului și premiile finale</b>. 🏆
+    </p>
+    <a href="https://checkout.stripe.com/pay_link_de_inlocuit" class="button">💄 Plătește taxa și înscrie-te</a>
+  </section>
+
+  <footer>
+    © 2025 Concurs de Machiaj Halloween — Toate drepturile rezervate 🎃
+    <small>Taxa de 10 lei are scopul de a menține calitatea concursului și de a susține premiile oferite.</small>
+  </footer>
+
+  <script>
+    // ====== ANIMAȚIE LA SCROLL ======
+    const fadeEls = document.querySelectorAll('.fade');
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      fadeEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < triggerBottom) el.classList.add('show');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
+
+</body>
+</html>
